@@ -85,10 +85,14 @@ if [ -e server.cfg ]; then
   echo "Skipping downloading default server config file as one already exists"
 else
   echo "Downloading default fivem config"
-  curl https://raw.githubusercontent.com/ptero-eggs/game-eggs/main/gta/fivem/server.cfg >>server.cfg
+  curl https://raw.githubusercontent.com/ptero-eggs/game-eggs/main/gta/fivem/server.cfg >> server.cfg
 fi
 
-# curl https://fivem_eg
+
+echo "Downloading start.sh"
+curl https://raw.githubusercontent.com/IsolyaFA/FiveM_EGG/refs/heads/main/start.sh >> start.sh
+
+chmod +x /home/container/start.sh
 
 mkdir -p logs/
 
